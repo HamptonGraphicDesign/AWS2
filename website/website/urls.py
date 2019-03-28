@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 # from django.urls import
 # from . import views
@@ -35,7 +38,11 @@ urlpatterns = [
     url(r'^', include('home.urls')),
 ]
 
+print("hello worldXXX")
+
 urlpatterns += staticfiles_urlpatterns()
+print("hello world")
+    # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 # if settings.DEBUG:
